@@ -37,7 +37,7 @@ export const ProductCard = (product) => {
                         </Link>
                     </div>
 
-                    <div className="col">
+                    <div className="col text-end">
                         <button className='btn btn-primary' onClick={handleAddToCar}>
                             Agregar
                         </button>
