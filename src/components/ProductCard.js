@@ -21,9 +21,9 @@ export const ProductCard = (product) => {
         <div className="card mx-3 my-3 small" style={style}>
             <img className='card-img-top my-2' src={imageUrl} alt="name" />
 
-            <p className='h5 info'>$ {price} {currency}</p>
+            <p className='h5 info mx-3'>$ {price} {currency}</p>
 
-            <div className="card-body">
+            <div className="card-body mx-1">
 
                 <h5 className="card-title">{name}</h5>
                 <p className="h6">Sku: {sku}</p>
