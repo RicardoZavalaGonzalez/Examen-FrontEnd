@@ -5,6 +5,10 @@ export const getListProducts = () => {
     return async (dispatch) => {
         try {
             // obteniendo la lista de productos y enviandolo al productReducer
+            /* La ruta orders funciona bien en postman pero
+            en este caso arroja el error de los CORS, intenté instalar extensiones 
+            de Chrome, subirlo a heroku intentar con otros navegadores pero eel problema
+            persistia */
             const resp = await fetchWithToken('products');
             const data = await resp.json();
             dispatch(productsLoaded(data.products));
