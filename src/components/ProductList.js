@@ -15,7 +15,7 @@ export const ProductList = () => {
     return (
         <div>
             {/* componente tarjeta para cada producto */}
-            <div className='row justify-content-center row-cols-md-3 g-3 animate__animated animate__fadeIn'>
+            <div className='row justify-content-center row-cols-md-3 g-3 animate__animated animate__fadeIn px-4 px-md-5'>
                 {
                     products.map(product => (
                         <ProductCard key={product.id} {...product} />

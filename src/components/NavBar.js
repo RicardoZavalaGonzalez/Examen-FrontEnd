@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
@@ -8,7 +8,7 @@ import { useForm } from '../hooks/useForm';
 export const Navbar = () => {
 
     const dispatch = useDispatch();
-    
+
     // hook del formulario
     const [formValues, handleInputChange, reset] = useForm({
         sku: '',
@@ -17,16 +17,16 @@ export const Navbar = () => {
         price: ''
     });
     const { sku, name, quantity, price } = formValues;
-    
+
     // lista de productos
     const { orders } = useSelector(state => state.products);
-    
+
     // ir al carrito de compras
     const navigate = useNavigate();
     const handleShopping = () => {
         navigate('/shoppings');
     }
-    
+
     // Busque de productos por sku, nombre, precio y cantidad
     const handleSearch = (e) => {
         e.preventDefault();
@@ -61,13 +61,12 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-5 px-3 px-md-5">
 
             <Link className="navbar-brand h1 mx-2" to="/">
-                Ir a la tienda
+                <i className="fas fa-home"></i>
             </Link>
             <form onSubmit={handleSearch} className='d-flex'>
-
                 <input className='form-control me-2' type="text" placeholder='Nombre' name='name'
                     value={name} onChange={handleInputChange} />
 

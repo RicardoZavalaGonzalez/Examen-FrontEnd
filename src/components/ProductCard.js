@@ -8,15 +8,18 @@ export const ProductCard = (product) => {
     const { id, sku, name, quantity, price, imageUrl, currency } = product;
 
     const dispatch = useDispatch();
-    
+
     // Agregando productos al carrito de compras
     const handleAddToCar = () => {
         dispatch(addToCar(product));
     }
 
+    const style = {
+        overFlow: 'hidden'
+    }
     return (
-        <div className="card mx-3 my-3 small">
-            <img className='card-img-top' src={imageUrl} alt="name" />
+        <div className="card mx-3 my-3 small" style={style}>
+            <img className='card-img-top my-2' src={imageUrl} alt="name" />
 
             <p className='h5 info'>$ {price} {currency}</p>
 
